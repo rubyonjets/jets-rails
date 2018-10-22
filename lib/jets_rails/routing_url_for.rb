@@ -21,7 +21,7 @@ require "action_view"
 
 module ActionView
   module RoutingUrlFor
-    include JetsRails::CommonMethods
+    include JetsRails::StageName
 
     def url_for(options = nil)
       url = case options
