@@ -8,18 +8,16 @@ How to use my plugin.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'jets_rails'
+gem 'jets-rails'
 ```
 
 And then execute:
-```bash
-$ bundle
-```
+
+    bundle
 
 Or install it yourself as:
-```bash
-$ gem install jets_rails
-```
+
+    gem install jets-rails
 
 ## Contributing
 Contribution directions go here.
