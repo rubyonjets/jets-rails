@@ -3,13 +3,13 @@ module JetsRails::CommonMethods
   def add_stage_name(url)
     return url unless on_aws?(url)
 
-    # stage_name = JetsRails::Resource::ApiGateway::Deployment.stage_name
-    stage_name = "fake_stage"
+    # This gem is expected to have Jets available
+    stage_name = Jets::Resource::ApiGateway::Deployment.stage_name rescue "fake_stage"
     "/#{stage_name}#{url}"
   end
 
   def on_aws?(url)
-    true
-    # request.host.include?("amazonaws.com") && url.starts_with?('/')
+    return true if ENV['JETS_ON_AWS'] # for local testing
+    request.host.include?("amazonaws.com") && url.starts_with?('/')
   end
 end
