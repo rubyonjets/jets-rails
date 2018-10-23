@@ -4,7 +4,7 @@ class StageMiddleware
   end
 
   def call(env)
-    add_stage_name(env) if on_aws?
+    add_stage_name(env) if on_aws?(env)
     status, headers, body = @app.call(env)
     [status, headers, body]
   end
@@ -16,9 +16,13 @@ private
     env[Rack::SCRIPT_NAME] = "/#{JetsRails.stage}"
   end
 
-  def on_aws?
+  def on_aws?(env)
+    puts "env[HTTP_HOST] #{env[Rack::HTTP_HOST]}"
+    puts "env[SERVER_NAME] #{env[Rack::SERVER_NAME]}"
+    puts "env['HTTP_X_FORWARDED_HOST'] #{env['HTTP_X_FORWARDED_HOST']}"
+
     return true if ENV['JETS_ON_AWS'] # for local testing
-    host = ENV['X-Forwarded-Host']
+    host = env['HTTP_X_FORWARDED_HOST'] # from Jets::Rack::Request#set_headers!
     host&.include?("amazonaws.com")
   end
 end
