@@ -1,6 +1,8 @@
 require 'active_support'
 
-# Override Rails SimpleFormatter directly is pretty simple approach here.
+# Tap into rails logging to show logs in CloudWatch eventually.
+#
+# Overriding Rails SimpleFormatter directly is pretty simple approach.
 # The definition is short.
 class ActiveSupport::Logger::SimpleFormatter
   # This method is invoked when a log event occurs
