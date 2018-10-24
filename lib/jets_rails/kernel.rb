@@ -30,7 +30,7 @@ module Kernel
       def #{meth}(*args, &block)
         @@io_buffer << args.first # message
         # Write immediately for debugging
-        IO.write("/tmp/rack-output.log", args.first, mode: 'a')
+        IO.write("/tmp/rack-output.log", "#{args.first}\n", mode: 'a')
         original_#{meth}(*args, &block)
       end
     CODE
