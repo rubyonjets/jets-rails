@@ -17,10 +17,6 @@ private
   end
 
   def on_aws?(env)
-    puts "env[HTTP_HOST] #{env[Rack::HTTP_HOST]}"
-    puts "env[SERVER_NAME] #{env[Rack::SERVER_NAME]}"
-    puts "env['HTTP_X_FORWARDED_HOST'] #{env['HTTP_X_FORWARDED_HOST']}"
-
     return true if ENV['JETS_ON_AWS'] # for local testing
     host = env['HTTP_X_FORWARDED_HOST'] # from Jets::Rack::Request#set_headers!
     host&.include?("amazonaws.com")
