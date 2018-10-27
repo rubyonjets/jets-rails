@@ -1,26 +1,16 @@
-# JetsRails
-Short description and motivation.
+# Jets Rails for Mega Mode
+
+This gem works in conjuction with Jets to allow you to run a Rails application on AWS Lambda. This gem is not meant to be used standalone.  Instead, jets automatically adds this gem to a Rails application as part of [Mega Mode Rails Support](http://rubyonjets.com/docs/rails-support/).
 
 ## Usage
-How to use my plugin.
 
-## Installation
-Add this line to your application's Gemfile:
+This gem is not meant to be used standalone. You can enable it though by adding to your Rails Gemfile and setting the `JETS_MEGAMODE=1` env var.
 
-```ruby
-gem 'jets-rails'
-```
+## More Info
 
-And then execute:
+For more information about Jets and Rails Support refer to:
 
-    bundle
-
-Or install it yourself as:
-
-    gem install jets-rails
-
-## Contributing
-Contribution directions go here.
-
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+* [Ruby on Jets](http://rubyonjets.com)
+* [AWS Lambda Ruby Support at Native Speed with Jets](https://blog.boltops.com/2018/09/02/aws-lambda-ruby-support-at-native-speed-with-jets)
+* [Jets Rails Support](http://rubyonjets.com/docs/rails-support/)
+* [Toronto Serverless Presentation: Jets Framework on AWS Lambda](https://blog.boltops.com/2018/09/25/toronto-serverless-presentation-jets-framework-on-aws-lambda)

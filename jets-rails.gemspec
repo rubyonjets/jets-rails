@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Tung Nguyen"]
   s.email       = ["tongueroo@gmail.com"]
   s.homepage    = "https://github.com/tongueroo/jets-rails"
-  s.summary     = "Summary of JetsRails."
-  s.description = "Description of JetsRails."
+  s.summary     = "Jets Mega Mode Rails Support"
+  s.description = "Reconfigures the Rails application and injects the necessary changes to run the rack application on AWS Lambda. Meant to be used in conjunction with Jets. Not meant to be used standalone."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
