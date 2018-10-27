@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     jets-rails (0.1.0)
-      rails (~> 5.2.1)
+      rails (~> 5)
 
 GEM
   remote: https://rubygems.org/
