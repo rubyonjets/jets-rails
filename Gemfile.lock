@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jets-rails (0.1.0)
+    jets-rails (0.2.0)
       rails (~> 5)
 
 GEM
