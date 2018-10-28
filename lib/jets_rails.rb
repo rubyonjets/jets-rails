@@ -1,8 +1,8 @@
-# JETS_MEGAMODE is set in the bin/rackup wrapper
+# JETS_MEGA is set in the bin/rackup wrapper
 # We do this check so we can include jets-rails in the Gemfile and allow users
 # to check to see if the bundle install will work though this is not activated
-# logically without JETS_MEGAMODE set.
-return unless ENV['JETS_MEGAMODE']
+# logically without JETS_MEGA set.
+return unless ENV['JETS_MEGA']
 
 # = Configuration
 #

@@ -4,7 +4,7 @@ This gem works in conjuction with Jets to allow you to run a Rails application o
 
 ## Usage
 
-This gem is not meant to be used standalone. You can enable it though by adding to your Rails Gemfile and setting the `JETS_MEGAMODE=1` env var.
+This gem is not meant to be used standalone. You can enable it though by adding to your Rails Gemfile and setting the `JETS_MEGA=1` env var.
 
 ## More Info
 
