@@ -12,6 +12,7 @@ This gem is not meant to be used standalone. You can enable it though by adding 
 
 For more information about Jets and Rails Support refer to:
 
+* Blog Post: [Jets Mega Mode: Run Rails on AWS Lambda](https://blog.boltops.com/2018/11/03/jets-mega-mode-run-rails-on-aws-lambda)
 * [Ruby on Jets](http://rubyonjets.com)
 * [AWS Lambda Ruby Support at Native Speed with Jets](https://blog.boltops.com/2018/09/02/aws-lambda-ruby-support-at-native-speed-with-jets)
 * [Jets Rails Support](http://rubyonjets.com/docs/rails-support/)
