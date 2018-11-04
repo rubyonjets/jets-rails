@@ -2,6 +2,8 @@
 
 This gem works in conjuction with [Jets](http://rubyonjets.com/) to allow you to run a Rails application on AWS Lambda. Jets automatically adds this gem to a Rails application as part of [Mega Mode Rails Support](http://rubyonjets.com/docs/rails-support/).  Here's a Blog Post Tutorial that covers Mega Mode: [Jets Mega Mode: Run Rails on AWS Lambda](https://blog.boltops.com/2018/11/03/jets-mega-mode-run-rails-on-aws-lambda).
 
+[![Jets Mega Mode: Rails on AWS Lambda](https://img.youtube.com/vi/hr-A6AHXuO0/0.jpg)](https://www.youtube.com/watch?v=hr-A6AHXuO0)
+
 ## Usage
 
 This gem is not meant to be used standalone. You can enable it though by adding to your Rails Gemfile and setting the `JETS_MEGA=1` env var.
