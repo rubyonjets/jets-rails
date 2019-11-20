@@ -1,5 +1,7 @@
 # Jets Rails for Mega Mode
 
+[![BoltOps Badge](https://img.boltops.com/boltops/badges/boltops-badge.png)](https://www.boltops.com)
+
 This gem works in conjuction with [Jets](http://rubyonjets.com/) to allow you to run a Rails application on AWS Lambda. Jets automatically adds this gem to a Rails application as part of [Mega Mode Rails Support](http://rubyonjets.com/docs/rails-support/).  Here's a Blog Post Tutorial that covers Mega Mode: [Jets Mega Mode: Run Rails on AWS Lambda](https://blog.boltops.com/2018/11/03/jets-mega-mode-run-rails-on-aws-lambda).
 
 Mega Mode Video Tutorial:
