@@ -1,1 +1,1 @@
-require_relative "jets_rails"
+require_relative "jets/rails"

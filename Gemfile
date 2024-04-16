@@ -1,15 +1,10 @@
-source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+# frozen_string_literal: true
 
-# Declare your gem's dependencies in jets_rails.gemspec.
-# Bundler will treat runtime dependencies like base dependencies, and
-# development dependencies will be added by default to the :development group.
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in jets-rails.gemspec
 gemspec
 
-# Declare any dependencies that are still in development here instead of in
-# your gemspec. These might include edge Rails or gems from your path or
-# Git. Remember to move these dependencies to your gemspec before releasing
-# your gem to rubygems.org.
+gem "rake", ">= 13.0"
 
-# To use a debugger
-# gem 'byebug', group: [:development, :test]
+gem "rspec", ">= 3.0"

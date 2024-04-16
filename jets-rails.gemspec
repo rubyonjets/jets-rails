@@ -1,22 +1,34 @@
-$:.push File.expand_path("lib", __dir__)
+# frozen_string_literal: true
 
-# Maintain your gem's version:
-require "jets_rails/version"
+require_relative "lib/jets/rails/version"
 
-# Describe your gem and declare its dependencies:
-Gem::Specification.new do |s|
-  s.name        = "jets-rails"
-  s.version     = JetsRails::VERSION
-  s.authors     = ["Tung Nguyen"]
-  s.email       = ["tongueroo@gmail.com"]
-  s.homepage    = "https://github.com/tongueroo/jets-rails"
-  s.summary     = "Jets Mega Mode Rails Support"
-  s.description = "Reconfigures the Rails application and injects the necessary changes to run the rack application on AWS Lambda. Meant to be used in conjunction with Jets. Not meant to be used standalone."
-  s.license     = "MIT"
+Gem::Specification.new do |spec|
+  spec.name = "jets-rails"
+  spec.version = Jets::Rails::VERSION
+  spec.authors = ["Tung Nguyen"]
+  spec.email = ["tongueroo@gmail.com"]
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  spec.summary = "Jets Rails Support"
+  spec.homepage = "https://github.com/rubyonjets/jets-rails"
+  spec.required_ruby_version = ">= 3.2.0"
 
-  s.add_dependency "rails", "~> 4"
+  spec.metadata["homepage_uri"] = spec.homepage
 
-  s.add_development_dependency "sqlite3"
+  # Specify which files should be added to the gem when it is released.
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  spec.files = Dir.chdir(__dir__) do
+    `git ls-files -z`.split("\x0").reject do |f|
+      (File.expand_path(f) == __FILE__) ||
+        f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor Gemfile])
+    end
+  end
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "activesupport"
+  spec.add_dependency "aws-sdk-sqs"
+  spec.add_dependency "dotenv-rails"
+  spec.add_dependency "memoist"
+  spec.add_dependency "rails", ">= 7.0"
+  spec.add_dependency "rainbow"
+  spec.add_dependency "zeitwerk"
 end
