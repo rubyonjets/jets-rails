@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *loosely tries* to adhere to [Semantic Versioning](http://semver.org/).
 
+## [1.0.2] - 2024-05-27
+- [#12](https://github.com/rubyonjets/jets-rails/pull/12) fix queue_url lookup when local
+
 ## [1.0.1] - 2024-05-21
 - [#11](https://github.com/rubyonjets/jets-rails/pull/11) reduce rails requirement to => 6.1
 - rm and gitignore Gemfile.lock
