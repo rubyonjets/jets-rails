@@ -2,31 +2,37 @@ class Jets::Rails::Job::Queue
   class Check
     class Error < StandardError; end
 
-    class << self
-      include Jets::Util::Logging
+    include Jets::Util::Logging
 
-      @@error_message = "ERROR: Unable to get queue url".color(:red)
-      def exist!
-        job_enable!
-        existance!
-      end
+    def initialize(job)
+      @job = job
+    end
 
-      def existance!
-        return if Url.queue_url
+    @@error_message = "ERROR: Unable to get queue url".color(:red)
+    def exist!
+      job_enable_message
+      existance!
+    end
 
-        log.error @@error_message
-        raise Error, "Are you sure you have deployed with Jets.project.config.job.enable = true ?"
-      rescue Jets::Api::Error::NotFound
-        log.error @@error_message
-        raise Error, "It does not look like the stack has successfully deployed. Please deploy first."
-      end
+    def queue_url
+      Url.queue_url(@job.queue_name)
+    end
 
-      def job_enable!
-        return if Url.queue_url
+    def existance!
+      return if queue_url
 
-        log.error @@error_message
-        raise Error, "Are you sure that config.job.enable = true ?"
-      end
+      log.error @@error_message
+      raise Error, "Are you sure you have deployed with Jets.project.config.job.enable = true ?"
+    rescue Jets::Api::Error::NotFound
+      log.error @@error_message
+      raise Error, "It does not look like the stack has successfully deployed. Please deploy first."
+    end
+
+    def job_enable_message
+      return if queue_url
+
+      log.error @@error_message
+      raise Error, "Are you sure that config.job.enable = true ?"
     end
   end
 end

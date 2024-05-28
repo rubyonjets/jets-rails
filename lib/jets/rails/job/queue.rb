@@ -6,7 +6,6 @@ module Jets::Rails::Job
 
     extend Memoist
     include Jets::Util::Logging
-    delegate :queue_url, to: Url
 
     attr_reader :job, :timestamp
     def initialize(job, timestamp = nil)
@@ -15,7 +14,7 @@ module Jets::Rails::Job
     end
 
     def enqueue
-      Check.exist!
+      Check.new(@job).exist!
 
       params = {
         queue_url: queue_url,
@@ -34,6 +33,11 @@ module Jets::Rails::Job
     def fifo?
       queue_url.include?(".fifo")
     end
+
+    def queue_url
+      Url.queue_url(@job.queue_name)
+    end
+    memoize :queue_url
 
     def fifo_params
       options = {}
