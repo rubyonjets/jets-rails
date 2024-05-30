@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 This project *loosely tries* to adhere to [Semantic Versioning](http://semver.org/).
 
+## [1.1.0] - 2024-05-30
+- [#14](https://github.com/rubyonjets/jets-rails/pull/14) multiple queue support
+
 ## [1.0.3] - 2024-05-29
 - [#13](https://github.com/rubyonjets/jets-rails/pull/13) update gem pin rails >= 5.0
 
